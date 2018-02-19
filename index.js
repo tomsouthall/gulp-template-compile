@@ -15,7 +15,7 @@ module.exports = function (options) {
     		var IIFE_start = options.IIFE !== false ? '(function() {\n' : '';
     		var IIFE_end = options.IIFE !== false ? '})();' : '';
 
-        var templateHeader = IIFE_start + 'var ' + objectName + = ' = {};';
+        var templateHeader = IIFE_start + 'var ' + objectName + ' = {};';
 
         var NSwrapper = '\n\n' + objectName + '["'+ name.replace(/\\/g, '/') +'"] = ';
 
