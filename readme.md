@@ -1,18 +1,12 @@
-# [gulp](https://github.com/wearefractal/gulp)-template-compile
+# gulp-template-compile
 
 > Compile [Lo-Dash templates](http://lodash.com/docs#template) (should work with [Underscore templates](http://underscorejs.org/#template) too).
 
 ## Synopsis
 
-This plugin is heavily inspired by [Sindre Sorhus](https://github.com/sindresorhus)'s [gulp-nunjucks](https://github.com/sindresorhus/gulp-nunjucks) plugin, in fact I used it as skeleton for creating this one.
+This is a fork of [https://github.com/ingro/gulp-template-compile].
 
-## Install
-
-Install with [npm](https://www.npmjs.org/package/gulp-template-compile)
-
-```
-npm install --save-dev gulp-template-compile
-```
+The major difference is the removal of the namespace functionality for replacement with a simple object assignment. This allows the output code to be wrapped in a closure where no namespacing is required.
 
 ## Example
 
@@ -59,11 +53,11 @@ Example:
 }
 ```
 
-#### options.namespace
+#### options.objectName
 Type: `String`
-Default: 'JST'
+Default: 'templates'
 
-The namespace in which the precompiled templates will be assigned. Starting from version **1.0** you could also provide a dotted namespace that will be correctly handled, thanks to **fhawkes**. For example 'custom.namespace' will result in `window['custom']['namespace']`.
+The object to which the precompiled templates will be assigned.
 
 #### options.templateSettings
 Type: `Object`
@@ -77,19 +71,6 @@ Default: null
 
 Wrap each precompiled template with an [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression). If you don't need it simply set this option to `false`.
 
-## Changelog
-
-#### 1.3.0:
-* **FEATURE**: Added `options.IIFE` [#14](https://github.com/ingro/gulp-template-compile/pull/14)
-
-#### 1.0.0:
-* **BREAKING**: Added support for custom dotted namespaces.
-
-## Notes
-
-If you use [grunt](http://gruntjs.com) instead of gulp, but want to perform a similar task, use [grunt-contrib-jst](https://github.com/gruntjs/grunt-contrib-jst).
-
-
 ## License
 
-MIT © Emanuele Ingrosso
+MIT
